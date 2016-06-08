@@ -1,0 +1,62 @@
+## Official mokka steering file used for CLIC CDR production, modified by S.Green to work 
+#version from 20101116
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# LOCAL MYSQL SERVER, OR pollin1.in2p3.fr
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Mokka/init/user consult
+/Mokka/init/dbPasswd consult
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# DETECTOR MODEL
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/Mokka/init/detectorModel CLIC_ILD_CDR
+/Mokka/init/lorentzTransformationAngle 10 mrad 
+/Mokka/init/physicsListName QGSP_BERT
+
+#===Added===
+/Mokka/init/MokkaGearFileName clic_ild_cdr.gear 
+/Mokka/init/startEventNumber StartEventNumber 
+#
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Verbosity / Batch Mode
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Mokka/init/printLevel 1
+/Mokka/init/BatchMode true
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# OUTPUT OF SLCIO/ASCII
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Name of LCIO output file - this implies LCIO output !!
+#===Modified===
+/Mokka/init/lcioFilename LcioOutputFile
+#
+
+# Write mode of LCIO output file: WRITE_APPEND or WRITE_NEW
+# if not specified the program will exit if the file already exists (safe mode)
+# ------------------------------------------------------------------------------
+/Mokka/init/lcioWriteMode WRITE_NEW
+
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# GENERAL VARIABLES (ENVIRONMENT / CUTS)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+####Change from previous 0.005 mm
+/Mokka/init/rangeCut 0.1 mm
+#  specifies the production Geant4 range cut
+#  [default is 0.005 mm ]
+
+/Mokka/init/TPCCut 10 MeV #Default is 10MeV
+
+/Mokka/init/lcioDetailedTRKHitMode VXDCollection
+/Mokka/init/lcioDetailedTRKHitMode FTDCollection
+/Mokka/init/lcioDetailedTRKHitMode ETDCollection
+/Mokka/init/lcioDetailedTRKHitMode SETCollection
+/Mokka/init/lcioDetailedTRKHitMode SITCollection
+/Mokka/init/lcioDetailedTRKHitMode TPCCollection 
+
+#/generator/generator mmnn02_3TeV.stdhep
+#/run/beamOn 100
+
