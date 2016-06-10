@@ -13,7 +13,11 @@ from Logic.GridTools import *
 
 #===== User Input =====
 
-eventsToSimulate = [ { 'EventType': "ee_nunuww_nunuqqqq"  , 'EventsPerFile' : 1000 , 'Energies':  ['1400'] } ]
+eventsToSimulate = [ 
+                       { 'EventType': "ee_nunuww_nunuqqqq"  , 'EventsPerFile' : 1000 , 'Energies':  ['1400'] }, 
+                       { 'EventType': "ee_nunuzz_nunuqqqq"  , 'EventsPerFile' : 1000 , 'Energies':  ['1400'] } 
+                   ]
+
 baseXmlFile  = 'MokkaTemplate/clic_ild_cdr.steer'
 detectorModel  = 'clic_ild_cdr'
 jobDescription = 'PhysicsAnalysis'
