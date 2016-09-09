@@ -48,13 +48,15 @@ def SubmitMokkaJob(jobInfo):
         print 'Wrong stdhep format.  Please check.'
         return
 
-
     for startEvent in xrange(0, eventsPerFile, eventsPerJob):
         print 'Checking ' + eventType + ', ' + str(energy) + 'GeV jobs.  Detector model ' + detectorModel + '.  Generator serial number ' + str(generatorSerialNumber) + '.  Start event number ' + str(startEvent) + '.'
         description = eventType + '_' + str(energy) + 'GeV_GeneratorSerialNumber_' + str(generatorSerialNumber)
         outputFile = 'MokkaSim_Detector_Model_' + detectorModel + '_' + description + '_' + str(eventsPerJob) + '_' + str(startEvent) + '.slcio'
         outputPath = '/' + jobDescription + '/MokkaJobs/Detector_Model_' + detectorModel + '/' + eventType + '/' + str(energy) + 'GeV'
 
+        #########################
+        # Check if output exists
+        #########################
         lfn = '/ilc/user/s/sgreen/' + outputPath + '/' + outputFile
         if DoesFileExist(lfn):
             continue
