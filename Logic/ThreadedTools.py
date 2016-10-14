@@ -93,7 +93,7 @@ def SubmitMokkaJob(jobInfo):
         job.setInputData(stdhepFile)
         jobDetailedName = jobDescription + '_' + detectorModel + '_' + eventType + '_' + str(energy) + 'GeV_GeneratorSerialNumber_' + str(generatorSerialNumber) + '_' +  str(eventsPerJob) + '_' + str(startEvent)
         job.setName(jobDetailedName)
-        job.setBannedSites(['LCG.IN2P3-CC.fr','LCG.IN2P3-IRES.fr','LCG.KEK.jp','OSG.PNNL.us','OSG.CIT.us','LCG.LAPP.fr','LCG.UKI-LT2-IC-HEP.uk','LCG.Tau.il','LCG.Weizmann.il','OSG.BNL.us'])
+        job.setBannedSites(['LCG.IN2P3-CC.fr','LCG.IN2P3-IRES.fr','LCG.KEK.jp','OSG.PNNL.us','OSG.CIT.us','LCG.LAPP.fr','LCG.UKI-LT2-IC-HEP.uk','LCG.Tau.il','LCG.Weizmann.il','OSG.BNL.us', 'OSG.MIT.us'])
 #        job.setCPUTime(43200) # Mokka jobs take a long time so set no limit. 
 
         res = job.append(MokkaApplication)
