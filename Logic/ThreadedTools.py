@@ -59,6 +59,7 @@ def SubmitMokkaJob(jobInfo):
         #########################
         lfn = '/ilc/user/s/sgreen/' + outputPath + '/' + outputFile
         if DoesFileExist(lfn):
+            print 'Output file already exists, skipping job.'
             continue
 
         #########################
@@ -105,7 +106,7 @@ def SubmitMokkaJob(jobInfo):
         job.dontPromptMe()
         job.submit(diracInstance)
         os.system('rm ' + mokkaSteeringFilename)
-    print 'Job(s) submitted to grid.'
+        print 'Job submitted to grid.'
 
 ### ----------------------------------------------------------------------------------------------------
 ### End of SubmitMokkaJob function
